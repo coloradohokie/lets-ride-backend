@@ -19,9 +19,9 @@ doug = Rider.create(first_name: "Doug", last_name: "Johnson")
 route1 = Route.create(name: "Fun1", description: "Go around the world")
 route2 = Route.create(name: "Fun1", description: "Go a different way")
 
-mike_moto1 = Motorcycle.create(make: "Honda", model: "Goldwing", year: "2000")
-mike_moto2 = Motorcycle.create(make: "Harley", model: "Fat Boy", year: "2012")
-doug_moto1 = Motorcycle.create(make: "Harley", model: "Fatty", year: "2017")
+mike_moto1 = Motorcycle.create(make: "Honda", model: "Goldwing", year: "2000", rider_id: mike.id)
+mike_moto2 = Motorcycle.create(make: "Harley", model: "Fat Boy", year: "2012", rider_id: mike.id)
+doug_moto1 = Motorcycle.create(make: "Harley", model: "Fatty", year: "2017", rider_id: doug.id)
 
 ride1 = Ride.create(date_time: "6/1/2021", description: "Fun ride for everybody")
 ride2 = Ride.create(date_time: "7/1/2021", description: "Intense ride")
