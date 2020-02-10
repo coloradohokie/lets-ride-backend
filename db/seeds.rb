@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Rider.destroy_all
+Route.destroy_all
+Motorcycle.destroy_all
+Ride.destroy_all
+Photo.destroy_all
+RideAttendance.destroy_all
+
 mike = Rider.create(first_name: "Mike", last_name: "Newman")
 doug = Rider.create(first_name: "Doug", last_name: "Johnson")
 
