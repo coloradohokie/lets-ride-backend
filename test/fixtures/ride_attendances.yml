@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rider: one
+  ride: one
+  motorcycle: one
+
+two:
+  rider: two
+  ride: two
+  motorcycle: two
