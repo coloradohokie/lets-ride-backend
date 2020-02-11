@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_194129) do
     t.string "make"
     t.string "model"
     t.integer "year"
+    t.string "image_path"
     t.integer "rider_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -23,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_194129) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string "location"
+    t.string "image_path"
     t.integer "ride_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
