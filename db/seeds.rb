@@ -16,15 +16,15 @@ RideAttendance.destroy_all
 mike = Rider.create(first_name: "Mike", last_name: "Newman")
 doug = Rider.create(first_name: "Doug", last_name: "Johnson")
 
-route1 = Route.create(name: "Fun1", description: "Go around the world")
-route2 = Route.create(name: "Fun1", description: "Go a different way")
+route1 = Route.create(name: "Cruiser Ride", description: "Go around the world")
+route2 = Route.create(name: "Twisties", description: "Go a different way")
 
 mike_moto1 = Motorcycle.create(make: "Honda", model: "Goldwing", year: "2000", rider_id: mike.id)
-mike_moto2 = Motorcycle.create(make: "Harley", model: "Fat Boy", year: "2012", rider_id: mike.id)
-doug_moto1 = Motorcycle.create(make: "Harley", model: "Fatty", year: "2017", rider_id: doug.id)
+mike_moto2 = Motorcycle.create(make: "Kawasaki", model: "Vulcan", year: "2012", rider_id: mike.id)
+doug_moto1 = Motorcycle.create(make: "BMW", model: "RS 1200", year: "2017", rider_id: doug.id)
 
-ride1 = Ride.create(date_time: "6/1/2021", description: "Fun ride for everybody")
-ride2 = Ride.create(date_time: "7/1/2021", description: "Intense ride")
+ride1 = Ride.create(date_time: "6/1/2021", description: "Fun ride for everybody", route_id:route1.id)
+ride2 = Ride.create(date_time: "7/1/2021", description: "Intense ride", route_id:route2.id)
 
 photo1 = Photo.create(location: "", ride_id: ride1.id)
 photo2 = Photo.create(location: "", ride_id: ride1.id)
