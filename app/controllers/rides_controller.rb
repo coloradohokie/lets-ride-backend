@@ -18,5 +18,4 @@ class RidesController < ApplicationController
 
         redirect_to ('http://localhost:3001/main.html')
     end
-
 end

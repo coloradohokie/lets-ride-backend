@@ -5,8 +5,8 @@ Ride.destroy_all
 Photo.destroy_all
 RideAttendance.destroy_all
 
-mike = Rider.create(first_name: "Mike", last_name: "Newman")
-doug = Rider.create(first_name: "Doug", last_name: "Johnson")
+mike = Rider.create(username: "MN", first_name: "Mike", last_name: "Newman")
+doug = Rider.create(username: "DJ", first_name: "Doug", last_name: "Johnson")
 
 route1 = Route.create(name: "Cruiser Ride", description: "Go around the world")
 route2 = Route.create(name: "Twisties", description: "Go a different way")
