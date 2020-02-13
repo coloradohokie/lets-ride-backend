@@ -12,9 +12,9 @@ class PhotosController < ApplicationController
     def create
         photo = Photo.create(
             image_path: params[:image_path],
-            ride_id: 1
+            ride_id: params[:ride_id]
         )
         
-        redirect_to ('http://localhost:3000/photos')
+        redirect_to ("http://localhost:3001/ride.html?id=#{photo.ride_id}")
     end
 end
