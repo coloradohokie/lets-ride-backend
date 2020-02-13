@@ -18,6 +18,6 @@ class MotorcyclesController < ApplicationController
             rider_id: params[:rider_id]
         )
 
-        redirect_to "http://localhost:3000/motorcycles.html"
+        redirect_to "http://localhost:3001/index.html"
     end
 end

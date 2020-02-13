@@ -16,6 +16,6 @@ class RidesController < ApplicationController
             route_id: params[:route]
         )
 
-        redirect_to ('http://localhost:3001/main.html')
+        redirect_to ('http://localhost:3001/index.html')
     end
 end
