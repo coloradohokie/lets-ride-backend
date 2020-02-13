@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 2020_02_10_194129) do
   create_table "routes", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "start_location"
+    t.string "end_location"
+    t.string "map_path"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

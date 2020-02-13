@@ -8,8 +8,8 @@ RideAttendance.destroy_all
 mike = Rider.create(username: "MN", first_name: "Mike", last_name: "Newman")
 doug = Rider.create(username: "DJ", first_name: "Doug", last_name: "Johnson")
 
-route1 = Route.create(name: "Cruiser Ride", description: "Go around the world")
-route2 = Route.create(name: "Twisties", description: "Go a different way")
+route1 = Route.create(name: "Cruisers and Casinos", description: "A loop starting and ending in Idaho Springs, through the central Coloado mountains", start_location:"Idaho Springs", end_location:"Idaho Springs", map_path:'<iframe src="https://www.google.com/maps/embed?pb=!1m38!1m12!1m3!1d49066.80065519919!2d-105.50421268868239!3d39.7694039105454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m23!3e0!4m5!1s0x876ba525c91b6e55%3A0xfb9e9ae2915f3f68!2sIdaho%20Springs!3m2!1d39.742488099999996!2d-105.5136081!4m3!3m2!1d39.7553358!2d-105.40837889999999!4m3!3m2!1d39.8002995!2d-105.50058519999999!4m3!3m2!1d39.773266199999995!2d-105.5374598!4m3!3m2!1d39.743824!2d-105.5137991!5e0!3m2!1sen!2sus!4v1581617029712!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>')
+route2 = Route.create(name: "Twisties", description: "A ride down the million dollar highway", start_location:"Montrose", end_location:"Ouray")
 
 mike_moto1 = Motorcycle.create(make: "Honda", model: "Goldwing", year: "2000", rider_id: mike.id)
 mike_moto2 = Motorcycle.create(make: "Kawasaki", model: "Vulcan", year: "2012", rider_id: mike.id)
