@@ -15,9 +15,9 @@ mike_moto1 = Motorcycle.create(make: "Honda", model: "Goldwing", year: "2000", r
 mike_moto2 = Motorcycle.create(make: "Kawasaki", model: "Vulcan", year: "2012", rider_id: mike.id)
 doug_moto1 = Motorcycle.create(make: "BMW", model: "RS 1200", year: "2017", rider_id: doug.id)
 
-ride1 = Ride.create(date_time: "6/1/2021", description: "Fun ride for everybody", route_id:route1.id)
-ride2 = Ride.create(date_time: "7/1/2021", description: "Intense ride", route_id:route2.id)
-ride3 = Ride.create(date_time: "1/1/2019", description: "Nice ride", route_id: route1.id)
+ride1 = Ride.create(date_time: "2021-06-23", description: "Fun ride for everybody", route_id:route1.id)
+ride2 = Ride.create(date_time: "2021-07-01", description: "Intense ride", route_id:route2.id)
+ride3 = Ride.create(date_time: "2019-01-01", description: "Nice ride", route_id: route1.id)
 
 photo1 = Photo.create(image_path: "https://www.youmotorcycle.com/wp-content/uploads/Million-Dollar-Highway-Colorado-Motorcycle-Ride.jpg", ride_id: ride1.id)
 photo2 = Photo.create(image_path: "https://atime2ride.com/wp-content/uploads/colorado-motorcycle-tours.jpg", ride_id: ride1.id)
