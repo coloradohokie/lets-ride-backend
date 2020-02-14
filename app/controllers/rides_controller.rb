@@ -18,4 +18,14 @@ class RidesController < ApplicationController
 
         redirect_to ('http://localhost:3001/index.html')
     end
+
+    def update
+        ride = Ride.find(params[:id])
+        ride.update(date_time: params[:date],
+                    description: params[:description],
+                    route_id: params[:route]
+                    )
+
+        redirect_to("http://localhost:3000/ride/#{ride.id}")
+    end
 end

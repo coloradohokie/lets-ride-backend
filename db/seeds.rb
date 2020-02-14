@@ -8,16 +8,16 @@ RideAttendance.destroy_all
 mike = Rider.create(username: "MN", first_name: "Mike", last_name: "Newman")
 doug = Rider.create(username: "DJ", first_name: "Doug", last_name: "Johnson")
 
-route1 = Route.create(name: "Cruisers and Casinos", description: "A loop starting and ending in Idaho Springs, through the central Coloado mountains", start_location:"Idaho Springs", end_location:"Idaho Springs", map_path:'<iframe src="https://www.google.com/maps/embed?pb=!1m38!1m12!1m3!1d49066.80065519919!2d-105.50421268868239!3d39.7694039105454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m23!3e0!4m5!1s0x876ba525c91b6e55%3A0xfb9e9ae2915f3f68!2sIdaho%20Springs!3m2!1d39.742488099999996!2d-105.5136081!4m3!3m2!1d39.7553358!2d-105.40837889999999!4m3!3m2!1d39.8002995!2d-105.50058519999999!4m3!3m2!1d39.773266199999995!2d-105.5374598!4m3!3m2!1d39.743824!2d-105.5137991!5e0!3m2!1sen!2sus!4v1581617029712!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>')
+route1 = Route.create(name: "Cruisers and Casinos", description: "A loop starting and ending in Idaho Springs, through the central Coloado mountains", start_location:"Idaho Springs", end_location:"Idaho Springs", map_path:'<iframe src="https://www.google.com/maps/embed?pb=!1m44!1m12!1m3!1d49066.866420780876!2d-105.50315577697855!3d39.769311637955425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m29!3e0!4m3!3m2!1d39.7418383!2d-105.51697759999999!4m3!3m2!1d39.7635487!2d-105.5269519!4m3!3m2!1d39.7754908!2d-105.5371481!4m3!3m2!1d39.8003947!2d-105.51238599999999!4m3!3m2!1d39.776237099999996!2d-105.4564285!4m3!3m2!1d39.7536576!2d-105.4021703!4m3!3m2!1d39.741926899999996!2d-105.5162807!5e0!3m2!1sen!2sus!4v1581638393609!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>')
 route2 = Route.create(name: "Twisties", description: "A ride down the million dollar highway", start_location:"Montrose", end_location:"Ouray")
 
 mike_moto1 = Motorcycle.create(make: "Honda", model: "Goldwing", year: "2000", rider_id: mike.id)
 mike_moto2 = Motorcycle.create(make: "Kawasaki", model: "Vulcan", year: "2012", rider_id: mike.id)
 doug_moto1 = Motorcycle.create(make: "BMW", model: "RS 1200", year: "2017", rider_id: doug.id)
 
-ride1 = Ride.create(date_time: "6/1/2021", description: "Fun ride for everybody", route_id:route1.id)
-ride2 = Ride.create(date_time: "7/1/2021", description: "Intense ride", route_id:route2.id)
-ride3 = Ride.create(date_time: "1/1/2019", description: "Nice ride", route_id: route1.id)
+ride1 = Ride.create(date_time: "2021-06-23", description: "Fun ride for everybody", route_id:route1.id)
+ride2 = Ride.create(date_time: "2021-07-01", description: "Intense ride", route_id:route2.id)
+ride3 = Ride.create(date_time: "2019-01-01", description: "Nice ride", route_id: route1.id)
 
 photo1 = Photo.create(image_path: "https://www.youmotorcycle.com/wp-content/uploads/Million-Dollar-Highway-Colorado-Motorcycle-Ride.jpg", ride_id: ride1.id)
 photo2 = Photo.create(image_path: "https://atime2ride.com/wp-content/uploads/colorado-motorcycle-tours.jpg", ride_id: ride1.id)
