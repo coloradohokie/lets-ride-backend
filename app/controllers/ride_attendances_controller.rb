@@ -8,4 +8,18 @@ class RideAttendancesController < ApplicationController
         @ride_attendance = RideAttendance.find(params[:id])
         render json:@ride_attendance
     end
+
+    def create
+        @ride_attendance = RideAttendance.create(
+            ride_id: params[:ride_id],
+            rider_id: params[:rider_id],
+            motorcycle_id: params[:motorcycle_id]
+        )
+        render json:@ride_attendance
+    end
+
+    def destroy
+        @ride_attendance = RideAttendance.find(params[:id])
+        @ride_attendance.destroy
+    end
 end
