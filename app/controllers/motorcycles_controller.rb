@@ -21,6 +21,18 @@ class MotorcyclesController < ApplicationController
         redirect_to "http://localhost:3001/index.html#motorcycles-section"
     end
 
+    def update
+        @motorcycle = Motorcycle.find(params[:id])
+        byebug
+        @motorcycle.update(
+            make: params[:make],
+            model: params[:model],
+            year: params[:year],
+            image_path: params[:image_path],
+            rider_id: params[:rider_id]
+        )
+    end
+
     def destroy
         @motorcycle = Motorcycle.find(params[:id])
         @motorcycle.destroy
