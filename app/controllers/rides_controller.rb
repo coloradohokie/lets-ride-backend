@@ -1,12 +1,12 @@
 class RidesController < ApplicationController
     def index
         @rides = Ride.all
-        render json:@rides, include: ['route', 'riders']
+        render json:@rides, include: ['route', 'ride_attendances', 'riders']
     end
 
     def show
         @ride = Ride.find(params[:id])
-        render json:@ride, include: ['route', 'riders']
+        render json:@ride, include: ['route', 'ride_attendances', 'riders']
     end
 
     def create
