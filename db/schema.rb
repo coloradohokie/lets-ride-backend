@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2020_02_10_194129) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "motorcycles", force: :cascade do |t|
     t.string "make"
     t.string "model"
     t.integer "year"
     t.string "image_path"
-    t.integer "rider_id", null: false
+    t.bigint "rider_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["rider_id"], name: "index_motorcycles_on_rider_id"
@@ -25,16 +28,16 @@ ActiveRecord::Schema.define(version: 2020_02_10_194129) do
 
   create_table "photos", force: :cascade do |t|
     t.string "image_path"
-    t.integer "ride_id", null: false
+    t.bigint "ride_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["ride_id"], name: "index_photos_on_ride_id"
   end
 
   create_table "ride_attendances", force: :cascade do |t|
-    t.integer "rider_id", null: false
-    t.integer "ride_id", null: false
-    t.integer "motorcycle_id", null: false
+    t.bigint "rider_id", null: false
+    t.bigint "ride_id", null: false
+    t.bigint "motorcycle_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["motorcycle_id"], name: "index_ride_attendances_on_motorcycle_id"
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_194129) do
   create_table "rides", force: :cascade do |t|
     t.string "date_time"
     t.string "description"
-    t.integer "route_id", null: false
+    t.bigint "route_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["route_id"], name: "index_rides_on_route_id"
