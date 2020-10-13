@@ -9,11 +9,10 @@ class AuthenticationController < ApplicationController
             else
                 payload = {
                     user_id: @user.id,
-                    username: @user.username
                 }
                 secret = Rails.application.secret_key_base
                 token = JWT.encode(payload, secret)
-                render json: {token: token}, status: :created
+                render json: {token: token, username: @user.username}, status: :created
             end
         end
     end
