@@ -5,7 +5,7 @@ class CreateMotorcycles < ActiveRecord::Migration[6.0]
       t.string :model
       t.integer :year
       t.string :image_path
-      t.references :rider, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
