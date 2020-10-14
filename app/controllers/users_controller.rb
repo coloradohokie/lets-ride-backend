@@ -9,4 +9,14 @@ class UsersController < ApplicationController
         })
         render json: {user: @user}, status: :created
     end
+
+    def index
+        @users = User.all
+        render json:@users, include: ['motorcycle', 'ride_attendances']
+    end
+
+    def show
+        @user = User.find(params[:id])
+        render json:@user, include: ['motorcycle', 'ride_attendances']
+    end
 end

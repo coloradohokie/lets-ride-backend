@@ -15,7 +15,7 @@ class MotorcyclesController < ApplicationController
             model: params[:model],
             year: params[:year],
             image_path: params[:image_path],
-            rider_id: params[:rider_id]
+            user_id: params[:user_id]
         )
 
         redirect_to "http://localhost:3001/index.html#motorcycles-section"

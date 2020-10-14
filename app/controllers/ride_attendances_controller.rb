@@ -12,8 +12,7 @@ class RideAttendancesController < ApplicationController
     def create
         @ride_attendance = RideAttendance.create(
             ride_id: params[:ride_id],
-            rider_id: params[:rider_id],
-            motorcycle_id: params[:motorcycle_id]
+            user_id: params[:user_id],
         )
         render json:@ride_attendance
     end
