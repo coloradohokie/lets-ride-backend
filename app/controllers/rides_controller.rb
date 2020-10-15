@@ -1,7 +1,7 @@
 class RidesController < ApplicationController
     def index
         @rides = Ride.all
-        render json:@rides, only: [:title, :date, :user_id]
+        render json:@rides, only: [:id, :title, :date, :user_id]
     end
 
     def show
