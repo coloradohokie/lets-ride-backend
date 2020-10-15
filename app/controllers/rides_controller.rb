@@ -1,12 +1,16 @@
 class RidesController < ApplicationController
     def index
         @rides = Ride.all
-        render json:@rides, include: ['route', 'ride_attendances', 'users']
+        render json:@rides, only: [:title, :date, :user_id]
     end
 
     def show
         @ride = Ride.find(params[:id])
-        render json:@ride, include: ['route', 'ride_attendances', 'users']
+        organizer = User.find(@ride.user_id)
+        organizer = {id: organizer.id, username: organizer.username}
+        @route = Route.find(@ride.route_id)
+        @riders = RideAttendance.select { |ride_att| ride_att.ride_id == @ride.id}
+        render json:{ride: @ride, riders: @riders, route: @route, organizer: organizer} 
     end
 
     def create
