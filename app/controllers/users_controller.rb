@@ -15,11 +15,11 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all
-        render json:@users, include: ['motorcycle', 'ride_attendances']
+        render json:@users, include: ['motorcycles', 'ride_attendances']
     end
 
     def show
         @user = User.find(params[:id])
-        render json:@user, include: ['motorcycle', 'ride_attendances']
+        render json:@user, include: ['motorcycles', 'ride_attendances']
     end
 end
