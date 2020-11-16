@@ -28,7 +28,7 @@ class RidesController < ApplicationController
             route_id: params[:route_id]
         )
 
-        redirect_to ('http://localhost:3001/index.html')
+        render json: ride, status: :created
     end
 
     def update
