@@ -31,7 +31,7 @@ class RidesController < ApplicationController
         organizer = User.find(ride.user_id)
         organizer = {id: organizer.id, username: organizer.username}
 
-        render json: {ride, route, organizer}, status: :created
+        render json:{ride: ride, route: route, organizer: organizer}, status: :created
     end
 
     def update
