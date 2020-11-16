@@ -31,8 +31,8 @@ class RidesController < ApplicationController
         # organizer = User.find(ride.user_id)
         # organizer = {id: organizer.id, username: organizer.username}
 
-        # redirect_to ('http://localhost:3001/index.html')
-        render status: :created
+        redirect_to ('http://localhost:3001/index.html')
+        # render status: :created
     end
 
     def update
