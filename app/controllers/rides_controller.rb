@@ -24,11 +24,15 @@ class RidesController < ApplicationController
             date: params[:date],
             start_time: params[:start_time],
             end_time: params[:end_time],
-            user_id: params[:user_id],
+            user_id = : params[:user_id],
             route_id: params[:route_id]
         )
+        # route = Route.find(ride.route_id)
+        # organizer = User.find(ride.user_id)
+        # organizer = {id: organizer.id, username: organizer.username}
 
-        render json: ride, status: :created
+        # render json:{ride: ride, route: route, organizer: organizer}, status: :created
+        render status: : created
     end
 
     def update
