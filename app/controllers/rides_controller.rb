@@ -24,15 +24,15 @@ class RidesController < ApplicationController
             date: params[:date],
             start_time: params[:start_time],
             end_time: params[:end_time],
-            user_id = : params[:user_id],
+            user_id: params[:user_id],
             route_id: params[:route_id]
         )
-        # route = Route.find(ride.route_id)
-        # organizer = User.find(ride.user_id)
-        # organizer = {id: organizer.id, username: organizer.username}
+        route = Route.find(ride.route_id)
+        organizer = User.find(ride.user_id)
+        organizer = {id: organizer.id, username: organizer.username}
 
         # redirect_to ('http://localhost:3001/index.html')
-        render status: :created
+        render json:{ride, route, organizer}, status: :created
     end
 
     def update
