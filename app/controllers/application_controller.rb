@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::API
 
     before_action :authenticate
+    before_filter :cors_set_access_control_headers
     after_filter :cors_set_access_control_headers
 
     def cors_set_access_control_headers
