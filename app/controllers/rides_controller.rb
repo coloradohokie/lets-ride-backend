@@ -32,7 +32,7 @@ class RidesController < ApplicationController
         organizer = {id: organizer.id, username: organizer.username}
 
         # redirect_to ('http://localhost:3001/index.html')
-        render json:{ride, route, organizer}, status: :created
+        render json:{ride: ride, route: route, organizer: organizer}, status: :created
     end
 
     def update
