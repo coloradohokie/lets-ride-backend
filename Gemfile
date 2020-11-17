@@ -50,3 +50,5 @@ gem 'carrierwave', '~> 2.0'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 gem 'jwt'
+
+gem 'rack'
