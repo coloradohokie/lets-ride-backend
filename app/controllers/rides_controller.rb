@@ -31,7 +31,6 @@ class RidesController < ApplicationController
         organizer = User.find(ride.user_id)
         organizer = {id: organizer.id, username: organizer.username}
 
-        # redirect_to ('http://localhost:3001/index.html')
         render json:{ride: ride, route: route, organizer: organizer}, status: :created
     end
 
@@ -46,7 +45,18 @@ class RidesController < ApplicationController
             user_id: params[:user_id],
             route_id: params[:route_id]
         )
+        route = Route.find(ride.route_id)
+        organizer = User.find(ride.user_id)
+        organizer = {id: organizer.id, username: organizer.username}
 
-        redirect_to("http://localhost:3001/ride.html?id=#{ride.id}")
+        render json:{ride: ride, route: route, organizer: organizer}, status: :ok
     end
+
+    def destroy
+        @ride = Ride.find(params[:id])
+        @ride.destroy
+
+        render status: :no_content
+    end
+
 end
