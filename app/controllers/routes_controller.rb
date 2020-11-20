@@ -15,7 +15,7 @@ class RoutesController < ApplicationController
             start_location: params[:start_location],
             end_location: params[:end_location],
             description: params[:description],
-            map_path: params[:map_path]
+            map_url: params[:map_url]
         )
 
         render json:@route, status: :created

@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
 
     def create
         photo = Photo.create(
-            image_path: params[:image_path],
+            image_url: params[:imageUrl],
             ride_id: params[:ride_id],
             user_id: params[:user_id]
         )

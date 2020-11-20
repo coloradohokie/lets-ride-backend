@@ -14,7 +14,7 @@ class MotorcyclesController < ApplicationController
             make: params[:make],
             model: params[:model],
             year: params[:year],
-            image_path: params[:image_path],
+            image_url: params[:imageUrl],
             user_id: params[:user_id]
         )
 

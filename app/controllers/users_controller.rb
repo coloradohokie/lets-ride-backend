@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         motorcycles = Motorcycle.find_by(user_id: @user.id)
         ride_attendances = RideAttendance.select{|x| x.user_id == @user.id}
         rides = ride_attendances.map{|ride| Ride.find(ride.ride_id)}
-        rides = rides.map {|ride| {id:ride.id, date:ride.date, title:ride.title}}
+        rides = rides.map {|ride| {id:ride.id, date:ride.date, title:ride.title, cover_image_url: ride.cover_image_url}}
         render json:{user: @user, motorcycles: motorcycles, ride_attendances: rides}, status: :ok
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_194129) do
+ActiveRecord::Schema.define(version: 2020_11_20_200925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_194129) do
     t.string "make"
     t.string "model"
     t.integer "year"
-    t.string "image_path"
+    t.string "image_url"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_194129) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string "image_path"
+    t.string "image_url"
     t.bigint "ride_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_194129) do
     t.bigint "route_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "cover_image_url"
     t.index ["route_id"], name: "index_rides_on_route_id"
     t.index ["user_id"], name: "index_rides_on_user_id"
   end
@@ -64,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_194129) do
     t.string "description"
     t.string "start_location"
     t.string "end_location"
-    t.string "map_path"
+    t.string "map_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
