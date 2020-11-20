@@ -19,6 +19,18 @@ class UsersController < ApplicationController
     #     render json: {users: @users}, status: :ok
     # end
 
+    def update
+        @user = User.find(params[:id])
+        @user.update(
+            email: params[:email],
+            username: params[:username],
+            password: params[:password],
+            city: params[:city],
+            state: params[:state]
+        )
+        render status: :ok
+    end
+
     def show
         @user = User.find(params[:id])
         motorcycles = Motorcycle.find_by(user_id: @user.id)
