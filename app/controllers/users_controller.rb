@@ -13,13 +13,18 @@ class UsersController < ApplicationController
         render json: {user: @user}, status: :created
     end
 
-    def index
-        @users = User.all
-        render json:@users, include: ['motorcycles', 'ride_attendances']
-    end
+    # Be sure to set up the route before turning this on.
+    # def index
+    #     @users = User.all
+    #     render json: {users: @users}, status: :ok
+    # end
 
     def show
         @user = User.find(params[:id])
-        render json:@user, include: ['motorcycles', 'ride_attendances']
+        motorcycles = Motorcycle.find_by(user_id: @user.id)
+        ride_attendances = RideAttendance.select{|x| x.user_id == @user.id}
+        rides = ride_attendances.map{|ride| Ride.find(ride.ride_id)}
+        rides = rides.map {|ride| {id:ride.id, date:ride.date, title:ride.title}}
+        render json:{user: @user, motorcycles: motorcycles, ride_attendances: rides}, status: :ok
     end
 end
