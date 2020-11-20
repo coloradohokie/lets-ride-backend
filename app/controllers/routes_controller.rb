@@ -18,7 +18,7 @@ class RoutesController < ApplicationController
             map_path: params[:map_path]
         )
 
-        redirect_to ('http://localhost:3001/organize-ride.html')
+        render json:@route, status: :created
     end
     
     

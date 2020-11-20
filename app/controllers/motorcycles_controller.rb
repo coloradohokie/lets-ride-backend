@@ -18,7 +18,7 @@ class MotorcyclesController < ApplicationController
             user_id: params[:user_id]
         )
 
-        redirect_to "http://localhost:3001/index.html#motorcycles-section"
+        render json:@motorcycle, status: :created
     end
 
     def destroy
