@@ -12,7 +12,12 @@ class RidesController < ApplicationController
         ride_attendance = RideAttendance.select { |ride_att| ride_att.ride_id == @ride.id}
         @riders = ride_attendance.map { |ride_att|
             rider = User.find(ride_att.user_id)
-            rider = {id:rider.id, username: rider.username, ride_att_id: ride_att.id}
+            rider = {
+                id:rider.id, 
+                username: rider.username, 
+                avatar: rider.avatar,
+                ride_att_id: ride_att.id
+            }
         }
         render json:{ride: @ride, riders: @riders, route: @route, organizer: organizer} 
     end
