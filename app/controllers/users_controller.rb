@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     #         password: params[:password],
     #         city: params[:city],
     #         state: params[:state],
-    #         avatar: params[:avatar]
+    #         avatar_url: params[:avatar_url]
     #     )
     #     render json:@user, status: :ok
     # end
@@ -50,8 +50,7 @@ class UsersController < ApplicationController
         @user.password = params[:password] if params[:password]
         @user.city = params[:city] if params[:city]
         @user.state = params[:state] if params[:state]
-        @user.avatar = params[:avatar] if params[:avatar]
-
+        @user.avatar_url = params[:avatar_url] if params[:avatar_url]
         if @user.save
             render json:@user, status: :ok
         else
@@ -71,6 +70,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.permit(:email, :password, :username, :city, :state, :avatar)
+        params.permit(:email, :password, :username, :city, :state, :avatar_url)
     end
 end

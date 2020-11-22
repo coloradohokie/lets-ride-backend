@@ -15,7 +15,7 @@ class RidesController < ApplicationController
             rider = {
                 id:rider.id, 
                 username: rider.username, 
-                avatar: rider.avatar,
+                avatar_url: rider.avatar_url,
                 ride_att_id: ride_att.id
             }
         }
