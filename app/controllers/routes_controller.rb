@@ -15,10 +15,25 @@ class RoutesController < ApplicationController
             start_location: params[:start_location],
             end_location: params[:end_location],
             description: params[:description],
-            map_url: params[:map_url]
+            map_url: params[:map_url],
+            created_by: params[:created_by]
         )
 
         render json:@route, status: :created
+    end
+
+    def update
+        @route = Route.find(params[:id])
+        @route.name = params[:route_name] if params[:route_name]
+        @route.start_location = params[:start_location] if params[:start_location]
+        @route.end_location = params[:end_location] if params[:end_location]
+        @route.description = params[:description] if params[:description]
+        @route.created_by = params[:created_by] if params[:created_by]
+        if @route.save
+            render json:@route, status: :ok
+        else
+            render json: {result: false, route: @route.errors }, status: :unprocessable_entity
+        end
     end
     
     
