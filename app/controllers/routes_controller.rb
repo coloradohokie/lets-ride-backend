@@ -33,6 +33,10 @@ class RoutesController < ApplicationController
         @route.description = params[:description] if params[:description]
         @route.map_url = params[:map_url] if params[:map_url]
         @route.created_by = params[:created_by] if params[:created_by]
+        @route.difficulty = params[:difficulty] if params[:difficulty]
+        @route.miles = params[:miles] if params[:miles]
+        @route.minutes = params[:minutes] if params[:minutes]
+        
         if @route.save
             render json:@route, status: :ok
         else
