@@ -10,13 +10,16 @@ class RoutesController < ApplicationController
     end
 
     def create
-        route = Route.create(
+        @route = Route.create(
             name: params[:route_name],
             start_location: params[:start_location],
             end_location: params[:end_location],
             description: params[:description],
             map_url: params[:map_url],
-            created_by: params[:created_by]
+            created_by: params[:created_by],
+            difficulty: params[:difficulty],
+            miles: params[:miles],
+            minutes: params[:minutes]
         )
 
         render json:@route, status: :created
